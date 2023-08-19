@@ -8,9 +8,11 @@ import {
   FiBox,
   FiBriefcase,
   FiGlobe,
+  FiMessageCircle,
   FiMoon,
   FiSun,
 } from 'react-icons/fi';
+import { Divider } from '..';
 
 const NavLinks = [
   {
@@ -37,14 +39,6 @@ const NavLinks = [
 
 const Navbar = () => {
   const pathName = usePathname();
-  const THEMES_DATA: {
-    [key: string]: {
-      icon: React.ReactNode;
-    };
-  } = {
-    dark: { icon: <FiSun className="text-sm md:text-lg" /> },
-    light: { icon: <FiMoon className="text-sm md:text-lg" /> },
-  };
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
@@ -78,16 +72,23 @@ const Navbar = () => {
           <h1 className="lg:text-xl text-lg font-semibold  ">Animesh.dev</h1>
         </div>
         {/* left container  */}
-        <div>
+        <div className="flex gap-3">
+          <button className="p-2 border-2 dark:border-borderDark rounded-md ">
+            <FiMessageCircle className="text-sm md:text-lg" />
+          </button>
           <button
             onClick={toggleTheme}
             className="p-2 border-2 dark:border-borderDark rounded-md "
           >
-            {THEMES_DATA[`${theme || 'dark'}`].icon}
+            {theme === 'dark' ? (
+              <FiSun className="text-sm md:text-lg" />
+            ) : (
+              <FiMoon className="text-sm md:text-lg" />
+            )}
           </button>
         </div>
       </section>
-      <hr className="border-t-2 dark:border-borderDark  " />
+      <Divider />
       {/* navigation section  */}
       <section className="lg:container lg:mx-auto flex gap-4 px-5 lg:px-0">
         {NavLinks.map((data, index) => (
@@ -103,7 +104,7 @@ const Navbar = () => {
           </Link>
         ))}
       </section>
-      <hr className="border-t-2 dark:border-borderDark  " />
+      <Divider />
     </nav>
   );
 };

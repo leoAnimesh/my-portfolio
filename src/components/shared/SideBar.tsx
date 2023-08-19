@@ -19,7 +19,7 @@ const details = {
 
 const SideBar = () => {
   return (
-    <div className="lg:w-[20%] w-full px-5 lg:px-0 flex lg:flex-col gap-5">
+    <div className="lg:w-[20%] w-full h-fit px-5 lg:px-0 flex lg:flex-col gap-5">
       {/* image  */}
       <div className="lg:w-full border-2 dark:border-borderDark rounded-md ">
         <img
