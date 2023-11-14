@@ -1,4 +1,4 @@
-import { Navbar, Sidebar } from '@/components';
+import { Navbar, Sidebar } from '@/app/components';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -26,7 +26,7 @@ export default function RootLayout({
             <Navbar />
             <section className="lg:container lg:mx-auto flex flex-1 flex-col lg:flex-row gap-6 mt-6 dark:bg-dark ">
               <Sidebar />
-              <section className="lg:w-[80%] mx-5 lg:mx-0 border-2 rounded-t-lg dark:border-borderDark ">
+              <section className="lg:w-[80%] mx-5 lg:mx-0 border rounded-t-lg dark:border-borderDark ">
                 {children}
               </section>
             </section>

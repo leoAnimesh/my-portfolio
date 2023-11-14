@@ -1,18 +1,19 @@
+import { nextui } from '@nextui-org/react';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         darkHeader: '#02040A',
         lightHeader: '#f6f8fa',
         dark: '#0E1117',
+        themeBlue: '#2F6FEB',
+        darkBlue: '#18283E',
         borderDark: '#30363D',
         lightCard: '#F6F8FA',
         darkCard: '#21262C',
@@ -20,6 +21,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [nextui()],
 };
 export default config;

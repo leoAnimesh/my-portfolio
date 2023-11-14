@@ -1,8 +1,8 @@
-import { Divider } from '@/components';
+import { Divider } from '@/app/components';
 import { FiMessageCircle } from 'react-icons/fi';
 
 const HOME_DATA = {
-  title: 'Overview.md',
+  title: 'overview.md',
   greet: `Hi 👋 I’m Animesh Mondal`,
   description: `I'm a passionate Software Developer With a strong knowledge base in frontend development, I have gained valuable experience through a diverse range of professional opportunities. I thrive on using my coding skills to solve real-world problems, and I'm always eager to tackle new challenges.`,
   introList: [
@@ -177,7 +177,7 @@ const Home = () => {
                 src={data.image}
                 alt={data.keyword}
                 key={index}
-                className="border-2 rounded border-lightCard  dark:border-darkCard"
+                className="border rounded border-lightCard  dark:border-darkCard"
               />
             </a>
           ))}
@@ -197,7 +197,7 @@ const Home = () => {
                 src={data.image}
                 alt={data.keyword}
                 key={index}
-                className="border-2 rounded border-lightCard  dark:border-darkCard"
+                className="border rounded border-lightCard  dark:border-darkCard"
               />
             </a>
           ))}

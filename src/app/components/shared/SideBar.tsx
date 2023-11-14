@@ -21,7 +21,7 @@ const SideBar = () => {
   return (
     <div className="lg:w-[20%] w-full h-fit px-5 lg:px-0 flex lg:flex-col gap-5">
       {/* image  */}
-      <div className="lg:w-full border-2 dark:border-borderDark rounded-md ">
+      <div className="lg:w-full border dark:border-borderDark rounded-md ">
         <img
           src="/profile.png"
           alt="profile"
@@ -36,7 +36,7 @@ const SideBar = () => {
         </div>
 
         {/* checkout resume btn */}
-        <button className="dark:bg-darkCard dark:border-0 border-2 bg-lightCard w-full text-sm md:text-base py-2 rounded-md ">
+        <button className="dark:bg-darkCard dark:border-0 border bg-lightCard w-full text-sm md:text-base py-2 rounded-md ">
           Checkout Resume
         </button>
 

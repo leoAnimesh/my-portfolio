@@ -13,6 +13,7 @@ import {
   FiSun,
 } from 'react-icons/fi';
 import { Divider } from '..';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const NavLinks = [
   {
@@ -39,15 +40,10 @@ const NavLinks = [
 
 const Navbar = () => {
   const pathName = usePathname();
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const dynamicStyles = {
     linkTagStyles(link: string) {
-      const style = 'flex items-center gap-2 py-3 px-2 border-b-2';
+      const style = 'flex items-center gap-2 py-3 px-2 border-b';
       return pathName === link
         ? `${style} border-orange`
         : `${style} border-transparent`;
@@ -64,7 +60,7 @@ const Navbar = () => {
       <section className="lg:container lg:mx-auto flex items-center justify-between py-4 px-5 lg:px-0 ">
         {/* left container  */}
         <div className="flex gap-4 items-center">
-          <div className="rounded-full bg-white border-2  w-[35px] h-[35px] lg:w-[45px] lg:h-[45px] dark:bg-white flex justify-center items-center">
+          <div className="rounded-full bg-white border  w-[35px] h-[35px] lg:w-[45px] lg:h-[45px] dark:bg-white flex justify-center items-center">
             <h1 className="font-semibold lg:text-2xl text-xl dark:text-dark ">
               A
             </h1>
@@ -73,19 +69,7 @@ const Navbar = () => {
         </div>
         {/* left container  */}
         <div className="flex gap-3">
-          <button className="p-2 border-2 dark:border-borderDark rounded-md ">
-            <FiMessageCircle className="text-sm md:text-lg" />
-          </button>
-          <button
-            onClick={toggleTheme}
-            className="p-2 border-2 dark:border-borderDark rounded-md "
-          >
-            {theme === 'dark' ? (
-              <FiSun className="text-sm md:text-lg" />
-            ) : (
-              <FiMoon className="text-sm md:text-lg" />
-            )}
-          </button>
+          <ThemeSwitcher />
         </div>
       </section>
       <Divider />
