@@ -1,5 +1,5 @@
-import { Divider } from '@/app/components';
-import { FiMessageCircle } from 'react-icons/fi';
+import Divider from '@/app/components/shared/Divider';
+import ProjectCard from './components/shared/ProjectCard';
 
 const HOME_DATA = {
   title: 'overview.md',
@@ -135,15 +135,41 @@ const HOME_DATA = {
   ],
 };
 
+const PROJECTS_TYPES = ['All', 'web Apps', 'Mobile Apps', 'Desktop Apps'];
+
+const PROJECTS = [
+  {
+    name: 'PhotoShoot Booking Application',
+    links: [{ type: 'web', name: 'tricy', url: 'https://tricy.app' }],
+    liveUrl: 'https://tricy.app',
+    description:
+      'Repudiandae nesciunt ut minus qui temporibus. Repudiandae nesciunt ut minus qui temporibus.',
+    type: 'Personal',
+    companyName: 'Tricy',
+    year: 2022,
+    applicationType: 'web',
+    techUsed: [{ name: 'React', icon: "https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" }, { name: 'Node JS', icon: 'https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png' }, { name: 'Firebase', icon: 'https://user-images.githubusercontent.com/25181517/189716855-2c69ca7a-5149-4647-936d-780610911353.png' },],
+  },
+  {
+    name: 'Food Delivery Application',
+    liveUrl: 'https://tricy.app',
+    links: [{ type: 'android', url: 'https://tricy.app' }],
+    description:
+      'Repudiandae nesciunt ut minus qui temporibus. Repudiandae nesciunt ut minus qui temporibus.',
+    type: 'Company',
+    companyName: 'Eatlots',
+    year: 2022,
+    applicationType: 'web',
+    techUsed: [{ name: 'React', icon: "https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" }, { name: 'Node JS', icon: 'https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png' }, { name: 'Firebase', icon: 'https://user-images.githubusercontent.com/25181517/189716855-2c69ca7a-5149-4647-936d-780610911353.png' },],
+  },
+];
+
 const Home = () => {
   return (
     <div>
       {/* header  */}
       <section className="flex justify-between py-3 px-4 items-center dark:bg-darkHeader bg-lightHeader rounded-t-md ">
         <p className="text-gray-500 text-base">{HOME_DATA.title}</p>
-        <button className="bg-green-700 hover:bg-green-600 flex items-center gap-3 text-white px-3 py-2 text-xs rounded-md">
-          <FiMessageCircle /> Let's Connect
-        </button>
       </section>
       <Divider />
 
@@ -156,34 +182,17 @@ const Home = () => {
         <p className="md:text-sm text-xs font-normal leading-6 ">
           {HOME_DATA.description}
         </p>
-        <br />
-        <ul>
-          {HOME_DATA.introList.map((data, index) => (
-            <li className="md:text-sm text-xs font-normal mb-2" key={index}>
-              {'-> '} {data}
-            </li>
-          ))}
-        </ul>
       </section>
       <Divider />
 
-      {/* connect links  */}
-      <section className="px-6 py-4">
-        <h1 className="font-semibold mb-3">Connect with me</h1>
-        <div className="flex gap-3">
-          {HOME_DATA.socialBadges.map((data, index) => (
-            <a key={index} href={data.link} target="_blank">
-              <img
-                src={data.image}
-                alt={data.keyword}
-                key={index}
-                className="border rounded border-lightCard  dark:border-darkCard"
-              />
-            </a>
+      <section className='px-6 py-4'>
+        <h1 className='font-medium'>Pinned Projects  📌</h1>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-3 mt-3'>
+          {PROJECTS.map((project, index) => (
+            <ProjectCard.Pinned project={project} key={index} />
           ))}
         </div>
       </section>
-      <Divider />
 
       {/* Skills section  */}
       <section className="px-6 py-4">

@@ -1,19 +1,15 @@
 'use client';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   FiBookOpen,
   FiBox,
   FiBriefcase,
   FiGlobe,
   FiMessageCircle,
-  FiMoon,
-  FiSun,
 } from 'react-icons/fi';
-import { Divider } from '..';
-import ThemeSwitcher from './ThemeSwitcher';
+import Divider from './Divider';
 
 const NavLinks = [
   {
@@ -69,7 +65,9 @@ const Navbar = () => {
         </div>
         {/* left container  */}
         <div className="flex gap-3">
-          <ThemeSwitcher />
+          <button className="bg-green-700 hover:bg-green-600 flex items-center gap-3 text-white px-3 py-2 text-xs rounded-md">
+            <FiMessageCircle /> Let's Connect
+          </button>
         </div>
       </section>
       <Divider />

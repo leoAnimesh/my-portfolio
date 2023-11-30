@@ -6,7 +6,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 export const Providers: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <NextUIProvider>
-      <NextThemesProvider attribute="class" defaultTheme="dark">
+      <NextThemesProvider attribute="class" defaultTheme="system">
         {children}
       </NextThemesProvider>
     </NextUIProvider>
